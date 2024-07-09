@@ -1,5 +1,7 @@
 :root {
     --primary-color: orange;
+    --card-border-radious: 7px;
+    --card-category-color: seagreen;
 }
 
 * {
@@ -20,7 +22,6 @@ body {
 /* Mobile view */
 .card-container {
 border: 1px solid #000;
-
 max-width: 1200px;
 width: 90%;
 display: grid;
@@ -33,36 +34,69 @@ gap: 2rem;
 .card {
 /* border: 1px solid #000;
 height: 200px; */
-width: 200px;
+/* box-shadow: 0px 2px 4px hsl(0deg,  4%, 0% / 0. 6); */
+display: flex;
+box-shadow: 0px 2px 4px #333;
+border-radius: var(--card-border-radious);
+transition: 0.;
+&:hover {
+box-shadow: 3px 6px 4px #333;
+border-radius: ;
+transform: translateY(-5px);
+
+}
 }
 
 .card-link {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-color);
 
 }
 
 .card-img {
     width: 100%;
-    height: 50%;
-
+    /* height: 350px; */
+    /* border-radius: var(--card-border-radious); */
+    border-top-left-radius: var(--card-border-radious);
+    border-top-right-radius: var(--card-border-radious);
 }
 
 .card-body {
-
+padding: 2rem;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
 }
 
 .card-category {
-
+    color: var(--card-category-color);
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .card-title {
+    color: var(--primary-color);
+    margin-bottom: 1.3rem;
+    font-family: cursive;
+    font-size: 2rem;
 
 }
 
 .card-description {
+    flex-grow: 1;
+    align-items: center;
+    gap: 1rem;
 
 }
 
 .card-post-info {
+    display: flex;
+    flex-direction: ;
+    align-items: center;
+    gap: 1rem;
 
 }
 
@@ -74,10 +108,14 @@ object-fit: cover;
 }
 
 .card-author {
-
+    color: var(--card-category-color);
+    font-family: cursive;
+    font-size: 1.5rem;
 }
 
 .card-date {
+    color: #777;
+    font-size: 1.3rem;
 
 }
 /* Tablet view */
@@ -87,7 +125,13 @@ object-fit: cover;
         /* margin: 2.5rem auto; */
         margin-right: 0;
         margin-left: 0;
+        
     }
+    .card-img {
+        width: 100%;
+        height: 28%;
+    }
+}
 
     /* Desktop view */
     @media (min-width: 1200px) {
@@ -96,5 +140,15 @@ object-fit: cover;
          
         
         }
+        .card-img {
+            width: 100%;
+            height: 28%;
+        }
+        .card-post-info {
+            display: flex;
+            flex-direction: ;
+            align-items: center;
+            gap: 1rem;
+        
+        }
     }
-}
